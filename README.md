@@ -24,7 +24,9 @@ d_res_m = 1;
 velocity_max_ms = 70;
 ```
 
+
 ## 2. user Defined Range and Velocity of target
+
 * define the target's initial posotion and velocity
 * Note: Velocity remains constant
 
@@ -33,7 +35,9 @@ R = 50; % Traget Initial Range
 v = -30; % Target Velocity
 ```
 
+
 ## 3. FMCW Waveform Generation
+
 * Design the FMCW waveform by giving the specs of each of its parameters.
 * Calculate the Bandwidth (Bsweep), Chirp Time (Tchirp) and Slope (slope) of the FMCW chirp using the requirements above.
 * Operating carrier frequency of Radar
@@ -78,7 +82,9 @@ r_t=zeros(1,length(t));
 td=zeros(1,length(t));
 ```
 
+
 ## 4. Signal generation and Moving Target simulation
+
 
 ```matlab
 for i=1:length(t)    
@@ -98,7 +104,9 @@ for i=1:length(t)
 end
 ```
 
+
 ## 5. Range Measurement
+
 * Reshape the vector into Nr*Nd array.
 * Nr and Nd here would also define the size of Range and Doppler FFT respectively.
 * run the FFT on the beat signal along the range bins dimension (Nr) and normalize
@@ -130,9 +138,12 @@ axis ([0 200 0 0.5]);
 ```
 
 * Simulation Result
+
 ![RangeFFT](https://user-images.githubusercontent.com/51704629/66047793-60332b80-e563-11e9-93ec-8e1c853d335c.png)
 
-## Range Doppler Response
+
+## 6. Range Doppler Response
+
 * The 2D FFT implementation is already provided here.
 * This will run a 2DFFT on the mixed signal (beat signal) output and generate a range doppler map.
 * You will implement CFAR on the generated RDM Range Doppler Map Generation.
@@ -167,9 +178,12 @@ figure,surf(doppler_axis,range_axis,RDM);
 ```
 
 * Simulation Result
+
 ![DopplerFFT](https://user-images.githubusercontent.com/51704629/66048007-bf913b80-e563-11e9-9efa-57708d3ca498.png)
 
+
 ## 7. CFAR implementation
+
 * Slide Window through the complete Range Doppler Map
 * Select the number of Training Cells in both the dimensions.
 
@@ -250,4 +264,5 @@ colorbar;
 ```
 
 * Simulation Result
+
 ![CA-CFAR_Filtered_RDM](https://user-images.githubusercontent.com/51704629/66048290-3af2ed00-e564-11e9-84e6-7914249a7714.png)
