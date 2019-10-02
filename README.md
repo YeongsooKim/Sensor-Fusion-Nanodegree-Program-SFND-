@@ -98,3 +98,35 @@ for i=1:length(t)
 end
 ```
 
+## 5. Range Measurement
+* Reshape the vector into Nr*Nd array.
+* Nr and Nd here would also define the size of Range and Doppler FFT respectively.
+* run the FFT on the beat signal along the range bins dimension (Nr) and normalize
+* Take the absolute value of FFT output
+
+```matlab
+Mix = reshape(Mix, [Nr,  Nd]);
+sig_fft1=zeros(Nr, Nd);
+for i=1:Nd
+    sig_fft1(:, i) = fft(Mix(:, i), Nr); % FFT
+    sig_fft1 = sig_fft1./Nr; % normalize
+end
+freq_beat_matrix = abs (sig_fft1);
+```
+
+* Output of FFT is double sided signal, but we are interested in only one side of the spectrum.
+* Hence we throw out half of the samples.
+
+```matlab
+freq_beat_matrix = freq_beat_matrix (1:Nr/2,:);
+```
+
+* Plotting the range, plot FFT output
+
+```matlab
+figure ('Name','Range from First FFT')
+plot (freq_beat_matrix);
+axis ([0 200 0 0.5]);
+```
+
+* Simulation Result
