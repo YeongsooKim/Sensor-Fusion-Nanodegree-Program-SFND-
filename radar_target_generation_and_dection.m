@@ -233,6 +233,18 @@ offset = 1.4;
 % figure,surf(doppler_axis,range_axis,cell2mat(signal_cfar));
 % colorbar;
 
+
+% *%TODO* :
+%design a loop such that it slides the CUT across range doppler map by
+%giving margins at the edges for Training and Guard Cells.
+%For every iteration sum the signal level within all the training
+%cells. To sum convert the value from logarithmic to linear using db2pow
+%function. Average the summed values for all of the training
+%cells used. After averaging convert it back to logarithimic using pow2db.
+%Further add the offset to it to determine the threshold. Next, compare the
+%signal under CUT with this threshold. If the CUT level > threshold assign
+%it a value of 1, else equate it to 0.
+
 RDM = RDM/max(max(RDM));
 
 for i = Tr+Gr+1:(Nr/2)-(Gr+Tr)
@@ -263,17 +275,19 @@ for i = Tr+Gr+1:(Nr/2)-(Gr+Tr)
     end
 end
 
-% The process above will generate a thresholded block, which is smaller
-% than the Range Doppler Map as the CUT cannot be located at the edges of
-% matrix.
-% Hence, few celss will not be thresholded.
-% To keep the map size same set those values to 0.
+
+% *%TODO* :
+% The process above will generate a thresholded block, which is smaller 
+%than the Range Doppler Map as the CUT cannot be located at the edges of
+%matrix. Hence,few cells will not be thresholded. To keep the map size same
+% set those values to 0. 
 
 RDM(union(1:(Tr+Gr),end-(Tr+Gr-1):end),:) = 0;  % Rows
 RDM(:,union(1:(Td+Gd),end-(Td+Gd-1):end)) = 0;  % Columns 
 
-% Display the CFAR output using the Surf function like we did for Range
-% Doppler Response output
+% *%TODO* :
+%display the CFAR output using the Surf function like we did for Range
+%Doppler Response output.
 
 figure('Name','CA-CFAR Filtered RDM')
 surf(doppler_axis,range_axis,RDM);
