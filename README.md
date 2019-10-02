@@ -17,8 +17,7 @@ Udacity Nanodegree Self Driving Car/ Radar proj
 * Range Resolution = 1 m
 * Max Velocity = 70 m/s
 
-```
-matlab
+```matlab
 fc= 77e9;
 range_max_m = 200;
 d_res_m = 1;
