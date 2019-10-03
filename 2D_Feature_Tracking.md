@@ -34,7 +34,7 @@ Your second task is to focus on keypoint detection. In the student version of th
 
 ### Modified file: matching2D_Student.cpp
 
-'''c++
+```c++
 // ...add start: MP.2 Keypoint Detection
 // detectorType = HARRIS
 void detKeypointsHarris(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool bVis)
@@ -159,7 +159,7 @@ void detKeypointsModern(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, std:
     }
 }
 // ...add end: MP.2 Keypoint Detection
-'''
+```
 
 ### Modified file: MidTermProject_Camera_Student.cpp
 
