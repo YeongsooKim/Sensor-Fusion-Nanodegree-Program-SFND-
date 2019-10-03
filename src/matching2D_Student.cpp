@@ -10,15 +10,15 @@ void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource, std::vector<cv::Key
     // configure matcher
     bool crossCheck = false;
     cv::Ptr<cv::DescriptorMatcher> matcher;
-
+    
     /*
-	if (matcherType.compare("MAT_BF") == 0)
+    if (matcherType.compare("MAT_BF") == 0)
     {
         int normType = cv::NORM_HAMMING;
         matcher = cv::BFMatcher::create(normType, crossCheck);
     }
-	*/
-	
+    */
+    
     // ...add start: MP.5 Descriptor Matching
     if (matcherType.compare("MAT_BF") == 0)
     {
@@ -43,7 +43,6 @@ void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource, std::vector<cv::Key
         matcher = cv::FlannBasedMatcher::create();              
     }
     // ...add end: MP.5 Descriptor Matching
-	
 
     // perform matching task
     if (selectorType.compare("SEL_NN") == 0)
@@ -53,7 +52,7 @@ void matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource, std::vector<cv::Key
     }
     else if (selectorType.compare("SEL_KNN") == 0)
     { // k nearest neighbors (k=2)
-		
+
         // ...add start: MP.6 Descriptor Distance Ratio
         vector<vector<cv::DMatch>> knn_matches;
         matcher->knnMatch(descSource, descRef, knn_matches, 2);
@@ -85,7 +84,7 @@ void descKeypoints(vector<cv::KeyPoint> &keypoints, cv::Mat &img, cv::Mat &descr
 
         extractor = cv::BRISK::create(threshold, octaves, patternScale);
     }
-	// ...add start: MP.4 Keypoint Descriptors
+    // ...add start: MP.4 Keypoint Descriptors
     else if(descriptorType.compare("BRIEF") == 0)
     {
         extractor = cv::xfeatures2d::BriefDescriptorExtractor::create();
@@ -159,7 +158,6 @@ void detKeypointsShiTomasi(vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool b
         cv::waitKey(0);
     }
 }
-
 
 // ...add start: MP.2 Keypoint Detection
 // detectorType = HARRIS
@@ -258,12 +256,12 @@ void detKeypointsModern(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, std:
     else if(detectorType.compare("AKAZE") == 0)
     {
         detector = cv::AKAZE::create();
-        detector->detect(img, keypoints);
+        detector->detect(img, keypoints);   
     }
     else if(detectorType.compare("SIFT") == 0)
     {
         detector = cv::xfeatures2d::SIFT::create();
-        detector->detect(img, keypoints);
+        detector->detect(img, keypoints);        
     }
     else
     {
