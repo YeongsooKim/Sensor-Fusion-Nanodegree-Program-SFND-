@@ -347,7 +347,7 @@ else if (selectorType.compare("SEL_KNN") == 0)
 #### MP.7 Performance Evaluation 1
 * Count the number of keypoints on the preceding vehicle for all 10 images and take note of the distribution of their neighborhood size. 
 * Do this for all the detectors you have implemented.
-* Solution Result: please check `MP_7_Counts_Keypoints.csv` file [CSV file](https://github.com/studian/SFND_P3_2D_Feature_Tracking/MP_7_Counts_Keypoints.csv).
+* Solution Result: please check `MP_7_Counts_Keypoints.csv` file [CSV file](https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/MP_7_Counts_Keypoints.csv).
 
 DETECTOR  | Number of keypoints
 --------  | -------------------
@@ -365,12 +365,12 @@ FAST detector has the bigest amount of keypoints.
 #### MP.8 Performance Evaluation 2
 * Count the number of matched keypoints for all 10 images using all possible combinations of detectors and descriptors. 
 * In the matching step, the BF approach is used with the descriptor distance ratio set to 0.8.
-* Solution Result: please check `MP_8_Counts_Matched_Keypoints.csv` file [CSV file](https://github.com/studian/SFND_P3_2D_Feature_Tracking/MP_8_Counts_Matched_Keypoints.csv).
+* Solution Result: please check `MP_8_Counts_Matched_Keypoints.csv` file [CSV file](https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/MP_8_Counts_Matched_Keypoints.csv).
 
 #### MP.9 Performance Evaluation 3
 * Log the time it takes for keypoint detection and descriptor extraction. 
 * The results must be entered into a spreadsheet and based on this data, the TOP3 detector / descriptor combinations must be recommended as the best choice for our purpose of detecting keypoints on vehicles.
-* Solution Result: please check `MP_9_Log_Time.csv` file [CSV file](https://github.com/studian/SFND_P3_2D_Feature_Tracking/MP_9_Log_Time.csv).
+* Solution Result: please check `MP_9_Log_Time.csv` file [CSV file](https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/MP_9_Log_Time.csv).
 
 Considering `MP_8_Counts_Matched_Keypoints.csv` and `MP_9_Log_Time.csv` The TOP3 detector / descriptor combinations as the best choice for our purpose of detecting keypoints on vehicles are:
 
