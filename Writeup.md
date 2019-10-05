@@ -20,13 +20,10 @@ See the classroom instruction and code comments for more details on each of thes
 * This can be achieved by pushing in new elements on one end and removing elements on the other end.
 * Solution: Lines 40 ~ 43 at [MidTermProject_Camera_Student.cpp](https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
-// ...add start: MP.1 Data Buffer Optimization
-if (  dataBuffer.size()+1 > dataBufferSize) 
-{
-    dataBuffer.erase(dataBuffer.begin());
-    cout << "REPLACE IMAGE IN BUFFER done" << endl;
-}
-// ...add end: MP.1 Data Buffer Optimization
+// ...modified start: MP.1 Data Buffer Optimization
+// dataBufferSize: no. of images which are held in memory (ring buffer) at the same time
+int dataBufferSize = 3; // default, original code: int dataBufferSize = 2;
+// ...modified end: MP.1 Data Buffer Optimization
 ```
 * Solution code: Lines 120 ~ 130 at [MidTermProject_Camera_Student.cpp](https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
