@@ -18,7 +18,8 @@ See the classroom instruction and code comments for more details on each of thes
 #### MP.1 Data Buffer Optimization
 * Implement a vector for dataBuffer objects whose size does not exceed a limit (e.g. 2 elements). 
 * This can be achieved by pushing in new elements on one end and removing elements on the other end.
-* Solution: Lines 40 ~ 43 at `MidTermProject_Camera_Student.cpp`
+* Solution: Lines 40 ~ 43 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 // ...add start: MP.1 Data Buffer Optimization
 if (  dataBuffer.size()+1 > dataBufferSize) 
@@ -28,7 +29,8 @@ if (  dataBuffer.size()+1 > dataBufferSize)
 }
 // ...add end: MP.1 Data Buffer Optimization
 ```
-* Solution code: Lines 120 ~ 130 at `MidTermProject_Camera_Student.cpp`
+* Solution code: Lines 120 ~ 130 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 // push image into data frame buffer
 DataFrame frame;
@@ -47,7 +49,8 @@ if (  dataBuffer.size()+1 > dataBufferSize)
 
 #### MP.2 Keypoint Detection
 * Implement detectors HARRIS, FAST, BRISK, ORB, AKAZE, and SIFT and make them selectable by setting a string accordingly.
-* Solution code: Lines 154 ~ 173 at `MidTermProject_Camera_Student.cpp`
+* Solution code: Lines 154 ~ 173 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 // ...add start: MP.2 Keypoint Detection
 // detectorType = HARRIS
@@ -200,7 +203,8 @@ void detKeypointsModern(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, std:
 
 #### MP.3 Keypoint Removal
 * Remove all keypoints outside of a pre-defined rectangle and only use the keypoints within the rectangle for further processing.
-* Solution code: Lines 183 ~ 205 at `MidTermProject_Camera_Student.cpp`
+* Solution code: Lines 183 ~ 205 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 // ...add start: MP.3 Keypoint Removal
 vector<cv::KeyPoint>::iterator keypoint;
@@ -230,7 +234,8 @@ if (bFocusOnVehicle)
 
 #### MP.4 Keypoint Descriptors
 * Implement descriptors BRIEF, ORB, FREAK, AKAZE and SIFT and make them selectable by setting a string accordingly.
-* Solution code: Lines 262 ~ 272 at `MidTermProject_Camera_Student.cpp`
+* Solution code: Lines 262 ~ 272 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 //.. add start: MP.4 Keypoint Descriptors
 string descriptorType;
@@ -314,7 +319,8 @@ else if (matcherType.compare("MAT_FLANN") == 0)
 ```
 #### MP.6 Descriptor Distance Ratio
 * Use the K-Nearest-Neighbor matching to implement the descriptor distance ratio test, which looks at the ratio of best vs. second-best match to decide whether to keep an associated pair of keypoints.
-* Solution code: Lines 274 ~ 276 at `MidTermProject_Camera_Student.cpp`
+* Solution code: Lines 274 ~ 276 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 //.. modified start: MP.6 Descriptor Distance Ratio
 string selectorType = "SEL_KNN";       // SEL_NN, SEL_KNN
@@ -381,7 +387,8 @@ Rank  |  Detector/Descriptor  | The Average Number of Keypoints | Average Time
 3rd   |FAST/SIFT              | 247 keypoints                   | 17.73 ms
 
 ---
-* Solution code of `MP.7`, `MP.8`, and `MP.9`: Lines 48 ~ 100 at `MidTermProject_Camera_Student.cpp`
+* Solution code of `MP.7`, `MP.8`, and `MP.9`: Lines 48 ~ 100 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 /* MAIN LOOP OVER ALL IMAGES */
 
@@ -437,13 +444,15 @@ for(auto detector_type_name:detector_type_names) // start loop detector_types
         for (size_t imgIndex = 0; imgIndex <= imgEndIndex - imgStartIndex; imgIndex++)
         {
 ```
-* Solution code of `MP.7`, `MP.8`, and `MP.9`: Lines 142 ~ 144 at `MidTermProject_Camera_Student.cpp`
+* Solution code of `MP.7`, `MP.8`, and `MP.9`: Lines 142 ~ 144 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 // ...modified start: MP.7, MP.8, MP.9
 string detectorType = detector_type_name; //"SHITOMASI", "HARRIS", "FAST", "BRISK", "ORB", "AKAZE", "SIFT"
 // ...modified end: MP.7, MP.8, MP.9
 ```
-* Solution code of `MP.7`: Lines 207 ~ 212 at `MidTermProject_Camera_Student.cpp`
+* Solution code of `MP.7`: Lines 207 ~ 212 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 //.. add start: MP.7 Performance Evaluation 1
 if(!write_detector)
@@ -452,13 +461,15 @@ if(!write_detector)
 }                
 //.. add end: MP.7 Performance Evaluation 1
 ```
-* Solution code of `MP.7`, `MP.8`, and `MP.9`: Lines 242 ~ 244 at `MidTermProject_Camera_Student.cpp`
+* Solution code of `MP.7`, `MP.8`, and `MP.9`: Lines 242 ~ 244 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 // ...modified start: MP.7, MP.8, MP.9
 string descriptorType = descriptor_type_name; // BRIEF, ORB, FREAK, AKAZE, SIFT
 // ...modified end: MP.7, MP.8, MP.9
 ```
-* Solution code of `MP.8` and `MP.9`: Lines 291 ~ 298 at `MidTermProject_Camera_Student.cpp`
+* Solution code of `MP.8` and `MP.9`: Lines 291 ~ 298 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
 //.. add start: MP.8 Performance Evaluation 2
 det_des_matches << ", " << matches.size();
@@ -469,7 +480,8 @@ t = ((double)cv::getTickCount() - t) / cv::getTickFrequency();
 det_des_time << ", " << 1000*t;
 //.. add end: MP.9 Performance Evaluation 3
 ```
-* Solution code of `MP.7`, `MP.8`, and `MP.9`: Lines 322 ~ 343 at `MidTermProject_Camera_Student.cpp`
+* Solution code of `MP.7`, `MP.8`, and `MP.9`: Lines 322 ~ 343 at [MidTermProject_Camera_Student.cpp]
+(https://github.com/YeongsooKim/SFND_2D_Feature_Tracking/blob/master/src/MidTermProject_Camera_Student.cpp).
 ```c++
            } // eof loop over all images
 
