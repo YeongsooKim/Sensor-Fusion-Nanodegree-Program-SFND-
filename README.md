@@ -1,6 +1,6 @@
 # Sensor Fusion Self-Driving Car Course
 
-# CORE CURRICULUM (2): Lidar Obstacle Detection 
+# CORE CURRICULUM: Lidar Obstacle Detection 
 
 <img src="media/ObstacleDetectionFPS.gif" width="700" height="400" />
 
