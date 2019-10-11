@@ -105,7 +105,7 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
    * measurements.
    */
 
-  //.. add hkkim start
+  //.. add yskim start
   if(!is_initialized_) 
   {
     if(meas_package.sensor_type_ == MeasurementPackage::RADAR) 
@@ -148,7 +148,7 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
   {
     UpdateLidar(meas_package);
   }
-  //.. add hkkim end
+  //.. add yskim end
 }
 
 void UKF::Prediction(double delta_t) {
@@ -158,7 +158,7 @@ void UKF::Prediction(double delta_t) {
    * and the state covariance matrix.
    */
 
-  //.. add hkkim start
+  //.. add yskim start
   //.. Generate augmented sigma points
   VectorXd x_aug = VectorXd(n_aug_);
   MatrixXd P_aug = MatrixXd(n_aug_, n_aug_);
@@ -259,7 +259,7 @@ void UKF::Prediction(double delta_t) {
 
     P_ = P_ + weights_(i)*x_diff*x_diff.transpose();
   }
-  //.. add hkkim end
+  //.. add yskim end
 }
 
 void UKF::UpdateLidar(MeasurementPackage meas_package) {
@@ -270,7 +270,7 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
    * You can also calculate the lidar NIS, if desired.
    */
 
-  //.. add hkkim start
+  //.. add yskim start
   //.. extract measurement
   VectorXd z_ = meas_package.raw_measurements_;
 
@@ -327,7 +327,7 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
 
   //.. calculate NIS
   NIS_laser_ = z_diff.transpose() * S.inverse() * z_diff;
-  //.. add hkkim end
+  //.. add yskim end
 }
 
 void UKF::UpdateRadar(MeasurementPackage meas_package) {
@@ -338,7 +338,7 @@ void UKF::UpdateRadar(MeasurementPackage meas_package) {
    * You can also calculate the radar NIS, if desired.
    */
 
-  //.. add hkkim start
+  //.. add yskim start
   //.. Measurement prediction
   //.. set measurement dimension, radar can measure r, phi, and r_dot
 
@@ -453,5 +453,5 @@ void UKF::UpdateRadar(MeasurementPackage meas_package) {
 
   //.. calculate NIS
   NIS_radar_ = z_diff.transpose() * S.inverse() * z_diff;
-  //.. add hkkim end
+  //.. add yskim end
 }
